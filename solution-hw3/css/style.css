@@ -1,3 +1,4 @@
+/* for elements*/
 body,content{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
@@ -9,17 +10,6 @@ header{
     gap: 20px;
 }
 
-.header-left{
-    flex: 0 0 auto;
-}
-
-.header-right{
-    flex: 3 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;  
-}
-
 button{
     background-color: yellow;
     width: 100%;
@@ -27,16 +17,6 @@ button{
     margin: auto;
     font-weight: 700;
     font-size: 20px;
-}
-
-.nav{
-    font-size: 20px;
-    text-align: center;
-    padding: 20px 40px 20px 0px;
-    border-bottom: 4px solid black;
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 40px;
 }
 
 a{
@@ -56,12 +36,35 @@ h1{
     margin: 0;
 }
 
+/* header on all pages*/
+.header-left{
+    flex: 0 0 auto;
+}
+
+.header-right{
+    flex: 3 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;  
+}
+
+.nav{
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 40px 20px 0px;
+    border-bottom: 4px solid black;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 40px;
+}
+
+/* content section*/
 .content{
     width: 90%;
     text-align: center;
     margin: auto;
 }
-
+/*gallery page*/
 .product-row{
     display: flex;
     gap: 40px;
@@ -91,7 +94,7 @@ h1{
     border-width: 3px;
     box-sizing: border-box;
 }
-
+/* detail page*/
 .pic-detail{
     width: 100%;
     margin: auto;
@@ -155,22 +158,22 @@ h1{
     flex: 1 1 60%;
 }
 
+/*cart pasge*/
+
+/*big box with all cart items*/
 .cart-list{
     width: 60%;
     margin: 20px 40px 40px auto;
     padding-bottom: 20px;
     border-bottom: 4px solid black;
 }
-
+/*cart for one item*/
 .cart-card{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /*
-    margin: 20px 40px 20px auto;
-    width: 60%;*/
 }
-
+/*upper main part o each cart card*/
 .cart-main{
     padding: 4px;
     display: flex;
@@ -195,6 +198,7 @@ h1{
     flex: 1 1 150px;
     text-align: right;
 }
+
 .pic-cart{
     width: 150px;
     display: block;
@@ -204,6 +208,7 @@ h1{
     box-sizing: border-box;
 }
 
+/*remove button under cart-main*/
 .cart-bottom{
     font-size: 14px;
     font-weight: 700;
@@ -211,6 +216,7 @@ h1{
     padding: 4px;
 }
 
+/*section of check out*/
 .checkout{
     width: 60%;
     margin: 20px 40px 40px auto;
