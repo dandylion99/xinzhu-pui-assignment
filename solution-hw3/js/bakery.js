@@ -1,12 +1,43 @@
+//object array to store info
+const glazingList = [
+    {
+        glazing: "Keep Original",
+        price: 0,
+    },
+    {
+        glazing: "Sugar milk",
+        price: 0,
+    },
+    {
+        glazing: "Vanilla milk",
+        price: 0.5,
+    },
+    {
+        glazing: "Double chocolate",
+        price: 1.5,
+    },
+];
+
+const packList = [
+    {
+        pack: "1",
+        price: 1,
+    },
+    {
+        pack: "3",
+        price: 3,
+    },{
+        pack: "6",
+        price: 5,
+    },{
+        pack: "12",
+        price: 10,
+    },
+];
+
 function glazingChange(element){
-    const glazingChange = element.value;
-    const glazingList = {
-        "Keep Original": 0,
-        "Sugar milk": 0,
-        "Vanilla milk": 0.5,
-        "Double chocolate": 1.5 
-    };
-    glazingPrice = glazingList[glazingChange];
+    const glazingChange = element.value;  
+    glazingPrice = glazingList[glazingChange].price;
     // check current price change
     // console.log("glazingprice: "+glazingPrice+", packPrice "+packPrice);
     updatePrice();
@@ -14,15 +45,9 @@ function glazingChange(element){
 
 function packChange(element){
     const packChange = element.value;
-    const packList = {
-        "1": 1,
-        "3": 3,
-        "6": 5,
-        "12": 10
-    };
-    packPrice = packList[packChange];
+    packPrice = packList[packChange].price;
     // check current price change
-    // console.log("glazingprice: "+glazingPrice+", packPrice "+packPrice);
+    //console.log("glazingprice: "+glazingPrice+", packPrice "+packPrice);
     updatePrice();
 }
 
@@ -35,5 +60,22 @@ function updatePrice(){
 }
 
 // store glazingPrice and packPrice as global variable
-let glazingPrice = 0; //the default value from detail.html
-let packPrice = 1;
+let glazingPrice = glazingList[0].price; //the default value from detail.html
+let packPrice = packList[0].price;
+
+//add options to select
+let glazingElement = document.querySelector("#glazing");
+for (let i=0;i<glazingList.length;i+=1){
+    let option = document.createElement("option");
+    option.text = glazingList[i].glazing;
+    option.value = i;
+    glazingElement.add(option);
+}
+
+let packElement = document.querySelector("#pack");
+for (let i=0;i<packList.length;i+=1){
+    let option = document.createElement("option");
+    option.text = packList[i].pack;
+    option.value = i;
+    packElement.add(option);
+}
