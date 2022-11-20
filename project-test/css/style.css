@@ -42,7 +42,6 @@ main{
     /* display: flex;
     flex-direction: column;
     justify-content: auto; */
-    overflow: auto; 
 }
 
 a{
@@ -78,15 +77,24 @@ ul.breadcrumb li a:hover {
 
 .intro-container{
     height: 12.5%;
+    width: 1100px;
+    margin: auto;
+}
+
+.intro-container > p{
+    padding-right: 30%;
 }
 
 .timeline-container{
     /* height: 1000px; */
     vertical-align: middle;
     width: 100vw;
+    /* width: 100vw; */
     /* display: flex;
     flex-direction: column;
     justify-content: center; */
+    overflow: auto; 
+
 }
 
 .timeline-bar{
@@ -100,7 +108,7 @@ ul.breadcrumb li a:hover {
 }
 
 .timeline{
-    width: 100%;
+    width: 100vw;
     display: flex;
     height: 10px;
     background-color: #0F4C75;
@@ -108,11 +116,11 @@ ul.breadcrumb li a:hover {
 }
 
 .movement-container{
-    margin: 10px 0 10px 0;
+    margin: auto;
     z-index: 1;
-    position: absolute;
+    /* position: absolute; */
     
-    width: 100%;
+    width: 1100px;
     height: 70%;
 }
 
@@ -125,33 +133,67 @@ ul.breadcrumb li a:hover {
     height: 15px;
     width: 100px;
     border-radius: 7px;
+    text-align: center;
     /* background-color: attr(data-color); */
 }
 
 #Neoclassicism{
-    /* top: 40%;
-    left: 300px; */
-    /* left: 10vw; */
-    top: 20vh;
+    top: 90%;
 }
 
 #Neoclassicism > div{
     background-color: #D4A5A5;
+    width: 513px;
 }
+
+#Romanticism{
+    top: 80%;
+    left: 220px;
+}
+
 #Romanticism > div{
     background-color: #A6D0E4;
+    width: 366.67px;
 }
+
+#Realism{
+    top: 70%;
+    left: 513px;
+}
+
 #Realism > div{
     background-color: #FCC433;
+    width: 220px;
 }
+
+#Impressionism{
+    top: 50%;
+    left: 806px;
+}
+
 #Impressionism > div{
     background-color: #F38181;
+    width: 220px;
 }
+
+#Post-Impressionism{
+    top: 40%;
+    left: 806.7px;
+}
+
 #Post-Impressionism > div{
     background-color: #FFB319;
+    width: 293.3px;
 }
+
+#Symbolism{
+    top: 30%;
+    left: 806.7px;
+}
+
 #Symbolism > div{
     background-color: #95E1D3;
+    width: 220px;
 }
 
 .movement-bar:hover{
@@ -159,6 +201,8 @@ ul.breadcrumb li a:hover {
 }
 
 .dot-container{
+    margin: auto;
+    width: 1100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
