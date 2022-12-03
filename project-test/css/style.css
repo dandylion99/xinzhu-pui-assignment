@@ -585,3 +585,18 @@ ul.breadcrumb li a:hover {
 .shadow{
     filter: drop-shadow(2px 2px 5px #7A7A7A);
 }
+
+.scaled{
+    transform: scaleX(2);
+    transition: 1s;
+}
+
+.scaled-off{
+    transform: scaleX(1);
+    transition: 1s;
+}
+
+.zoom-out{
+    transform: scaleX(2);
+    transition: 1s;
+}

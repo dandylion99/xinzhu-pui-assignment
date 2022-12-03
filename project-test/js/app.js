@@ -29,10 +29,44 @@ if (document.URL.includes("index")){
             'animate__animated',
             'animate__zoomIn'
         ];
-      
-        $("#Neoclassicism").click(function() {
+        window.onload = () => {
+            $(".timedot")
+                .addClass(fade_in);
+
             $(".timeline-bar")
-                .addClass(zoom_in);
+                .removeClass("scaled")
+                .addClass("scaled-off");   
+        }
+
+        let node = document.querySelector("body");
+        
+        node.addEventListener('wheel', (event) => {
+            if(event.deltaY<0){
+                $(".timeline-bar")
+                .removeClass("scaled-off")
+                .addClass("scaled");
+            $(".timedot")
+                .addClass(fade_out);
+            $(".intro-container")
+                .addClass(fade_out);
+            $(".movement-container")
+                .addClass(fade_out)
+                .bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+                    function() {
+                    window.location.href = "movement.html"; 
+                });
+
+            }
+        });
+      
+        $(".movement-box").click(function(e) {
+            e.preventDefault();    
+
+            $(".timeline-bar")
+                .removeClass("scaled-off")
+                .addClass("scaled");
+            $(".timedot")
+                .addClass(fade_out);
             $(".intro-container")
                 .addClass(fade_out);
             $(".movement-container")
@@ -42,22 +76,6 @@ if (document.URL.includes("index")){
                     window.location.href = "movement.html"; 
                 });
         });
-
-        // $("#Neoclassicism").mouseover(function(){
-        //     $('.background')
-        //         .removeClass("fade-out")
-        //         .addClass("fade-in");
-        
-
-        //     // $('body,html').css({backgroundColor: 'red'})
-        // });
-
-        // $("#Neoclassicism").mouseleave(function(){
-        //     $('.background')
-        //         .removeClass("fade-in")
-        //         .addClass("fade-out");
-        //     // $('body,html').css({backgroundColor: 'red'})
-        // });
 
         $(".movement-box").mouseover(function(){
             let img = $(this).attr('id');
@@ -153,6 +171,14 @@ if(document.URL.includes("movement")){
             transition_el.classList.remove('is-active');
         }, 500);   
     }
+    node = document.querySelector("body");
+    node.addEventListener('wheel', (event) => {
+        if(event.deltaY>0){
+            window.location.href = "index.html";
+
+        }
+    });
+    
     
     window.onload = () => {
         const anchors = document.querySelectorAll('.painting-box a');
