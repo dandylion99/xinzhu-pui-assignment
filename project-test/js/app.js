@@ -67,18 +67,22 @@ if (document.URL.includes("index")){
             let imgURL = "url(assets/" + img + ")";
             console.log(imgURL);
             $('.background')
-                .css("background-image",imgURL)
+                .css("background-image",imgURL);
+            setTimeout(function(){
+                $('.background')   
                 .removeClass("fade-out")
                 .addClass("fade-in");
+                },10); //wait for the background image be replaced
+            
+            
+                
                 // .css("background-image",'url("assets/Impression_Sunrise.png")');
         });
 
         $(".movement-box").mouseleave(function(){
             $('.background')
-                // .css("background-image","")
                 .removeClass("fade-in")
                 .addClass("fade-out");
-                // .css("background-image",'url("assets/Impression_Sunrise.png")');
         });
 
     })
