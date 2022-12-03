@@ -3,9 +3,13 @@
     <meta charset="UTF-8">
     <title>Art Galley</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script defer src="js/painting_info.js"></script>
     <script defer src="js/app.js"></script>
 
     <body>
+        <div class="transition transition-2"></div>
+
         <header>
             <h1>WESTERN ART MOVEMENTS: 19th & 20th Centuries</h1>
             <ul class="breadcrumb">
@@ -16,84 +20,45 @@
             </ul>
         </header>
         <main>
-            <a href="movement.html">
-            <div class="movement-container" id="impressionism">
-                Impressionism
-                <div class="movement-bar">
+            <div class="painting-container-big">
+                <div class="painting-container-arrow">
+                    <!-- <a href="movement.html"> -->
+                        <img src="assets/arrow.png" class="arrow">
+                    <!-- </a> -->
+                </div>
+                <div class="painting-container-img">
+                    <img src="assets/Impression_Sunrise.png" class="painting-full">
+                </div>
+                <div class="painting-container-text">
+                    <h3>
+                        Impression, Sunrise
+                    </h3>
+                    <h4 class="italic">
+                        Claude Monet, 1872
+                    </h4>
+                    <p>
+                        Impression, Sunrise is first shown at what would become known as the "Exhibition of the Impressionists" in Paris in April, 1874. The painting is credited with inspiring the name of the Impressionist movement.<br>
+                        Monet depicts a mist, which provides a hazy background to the piece set in the French harbor. The orange and yellow hues contrast brilliantly with the dark vessels, where little, if any detail is immediately visible to the audience. It is a striking and candid work that shows the smaller boats in the foreground almost being propelled along by the movement of the water. This has, once again, been achieved by separate brushstrokes that also show various colors "sparkling" on the sea.
+                    </p>
+                    <div class="artist-container-outer">
+                        <h4>About the Artist</h4>
+                        <div class="artist-container-inner">
+                            
+                            <div class="artist-container-left">
+                                <img class="artist-profile" src="assets/Monet.png">
+                                <p class="subtitle">Claude Monet<br>1840 - 1926</p>
+                            </div>
+                            <div class="artist-container-right">      
+                                <p>
+                                    During his long career, Monet was the most consistent and prolific practitioner of impressionism's philosophy of expressing one's perceptions before nature, especially as applied to plein air (outdoor) landscape painting.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
-            </a>
-            <div class="timeline-container">
-                <div class="timeline">
-
-                </div>
-                <div class="dot-container">
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1770
-                    </div>
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1780
-                    </div>
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1790
-                    </div>
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1800
-                    </div>
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1810
-                    </div>
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1820
-                    </div>
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1830
-                    </div>
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1840
-                    </div>
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1850
-                    </div>
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1860
-                    </div>
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1870
-                    </div>
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1880
-                    </div>
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1890
-                    </div>
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1900
-                    </div>
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1910
-                    </div>
-                    <div class="timedot">
-                        <div class="timetick"></div>
-                        1920
-                    </div>
-                </div>
-            </div>
+        
         </main>
             
         

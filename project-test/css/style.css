@@ -1,9 +1,55 @@
 html{
     background-color: #F5EFE6;
+
+}
+
+.background{
+    /* background-image: url(""); */
+    background-attachment: fixed;
+
+    background-size: cover;
+    background-color: rgba(255,255,255,0.3);
+    opacity: 0%;
+    background-blend-mode: lighten;
+    position: absolute;
+    /* background-color: #000000; */
+    top :0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    z-index: -100;
+}
+
+.fade-in{
+    opacity: 60%;
+    transition: 0.5s ease-in;
+}
+
+.fade-out{
+    opacity: 0%;
+    transition: 0.5s ease-out;
+}
+
+.background-painting-fade-out{
+    background-image: url("../assets/Impression_Sunrise.png");
+    background-attachment: fixed;
+
+    background-size: cover;
+    background-color: rgba(255,255,255,0.3);
+    background-blend-mode: lighten;
+    transition: 0.5s ease-out;
+}
+
+header{
+    width: 1100px;
+    margin: 5px auto 10px auto;
+    height: 10vh;
 }
 
 body{
     font-family: MoMA Sans Web;
+   
+
 }
 
 p{
@@ -12,6 +58,14 @@ p{
     margin: 5px 0px 0px 0px;
 }
 
+a{
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+    all: unset;
+    cursor: pointer;
+    display: block;
+}
 
 h1{
     font-style: normal;
@@ -20,12 +74,38 @@ h1{
     line-height: 35px;
     margin: 10px 50px 0px auto;
 }
+h3{
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0px;
+    padding: 0px;
+}
+
+h4{
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0px;
+    padding: 0px;
+    font-weight: 600;
+}
+
+img{
+    /* object-fit: scale-down; */
+    /*float: left; */
+}
+
+.italic{
+    font-style: italic;
+}
+
 .movement-heading{
     font-style: normal;
     font-weight: 600;
     font-size: 28px;
-    line-height: 34px;
-    padding-right: 10px;;
+    line-height: 30px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 
     color: #F38181;
 }
@@ -38,29 +118,16 @@ h1{
     line-height: 19px;
 }
 
-header{
-    /* height: 10vh; */
-}
-
-main{
-    height: auto;
-    /* width: 100%;  */
-    /* vertical-align: middle; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: auto; */
-}
-
-a{
-    color:black;
-}
-
 /* breadcrumb codes borrowed from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_breadcrumbs */
 ul.breadcrumb {
-    margin: 10px auto 10px uto;
+    margin: 5px auto 10px auto;
     padding: 2px 2px;
     list-style: none;
   }
+
+ul.breadcrumb a{
+    display: inline;
+}
 
 ul.breadcrumb li {
     display: inline;
@@ -84,26 +151,28 @@ ul.breadcrumb li a:hover {
 }
 
 .intro-container{
-    height: 12.5%;
+    height: 15vh;
     width: 1100px;
-    margin: auto;
+    margin: 0px auto 0px auto;
 }
 
-.intro-container > p{
-    /* padding-right: 30%; */
+.scroll-container{
+    overflow-x: scroll;
+    height: 100%;
 }
+
 
 .timeline-container{
-    /* height: 1000px; */
+    height: 65vh;
     vertical-align: middle;
-    width: 100vw;
+    width: 1100px;
+    margin: 0px auto 0px auto;
     /* width: 100vw; */
     /* display: flex;
     flex-direction: column;
     justify-content: center; */
-    overflow: auto; 
-    padding: 20px;
-
+    /* overflow-x: scroll; */
+    position: relative;
 }
 
 .timeline-bar{
@@ -113,24 +182,28 @@ ul.breadcrumb li a:hover {
     vertical-align: middle;
     margin: auto;
     position: absolute;
-    top: 60%;
+    top: 45%;
 }
 
 .timeline{
-    width: 100vw;
+    width: 100%;
     display: flex;
     height: 10px;
     background-color: #0F4C75;
     justify-content: space-between;
+
 }
 
 .movement-container{
-    margin: auto;
+    margin: 0px;
     z-index: 1;
     /* position: absolute; */
     
     width: 1100px;
-    height: 70%;
+    height: 100%;
+    /* overflow-x: scroll; */
+
+
 }
 
 .movement-box{
@@ -148,16 +221,17 @@ ul.breadcrumb li a:hover {
 
 #Neoclassicism{
     top: 85%;
+    left: 15px;
 }
 
 #Neoclassicism > div{
     background-color: #D4A5A5;
-    width: 513px;
+    width: 500px;
 }
 
 #Romanticism{
-    top: 76.5%;
-    left: 220px;
+    top: 72.5%;
+    left: 225px;
 }
 
 #Romanticism > div{
@@ -166,7 +240,7 @@ ul.breadcrumb li a:hover {
 }
 
 #Realism{
-    top: 68%;
+    top: 60%;
     left: 513px;
 }
 
@@ -176,8 +250,8 @@ ul.breadcrumb li a:hover {
 }
 
 #Impressionism{
-    top: 50%;
-    left: 806px;
+    top: 30%;
+    left: 720px;
 }
 
 #Impressionism > div{
@@ -186,29 +260,30 @@ ul.breadcrumb li a:hover {
 }
 
 #Post-Impressionism{
-    top: 40%;
-    left: 806.7px;
+    top: 15%;
+    left: 795px;
 }
 
 #Post-Impressionism > div{
     background-color: #FFB319;
-    width: 293.3px;
+    width: 288px;
 }
 
 #Symbolism{
-    top: 30%;
-    left: 806.7px;
+    top: 0%;
+    left: 795px;
 }
 
 #Symbolism > div{
     background-color: #95E1D3;
-    width: 220px;
+    width: 215px;
 }
 
 
 .movement-bar:hover{
     height: 35px;
 }
+
 
 .dot-container{
     margin: auto;
@@ -236,9 +311,22 @@ ul.breadcrumb li a:hover {
     top: -17.5px;
     z-index: -1;
 }
+
 /* movement page*/
 .movement-heading{
     font-size: 24px;
+}
+
+.movement-time-bar{
+    position: absolute;
+    top: 40%;
+    left: 278px;
+    width: 810px;
+    height: 20px;
+    background-color: #F38181;
+    opacity: 100%;
+    border-radius: 10px;
+    z-index: -1;
 }
 
 /* .painting-line{
@@ -250,20 +338,19 @@ ul.breadcrumb li a:hover {
     top: 0px;
 } */
 .painting-thumbnail{
-    max-width: 180px;
-    max-height: 160px;
-    /* position: absolute; */
-    left: -2px;
+    width: 170px;
+    max-height: 110px;
+}
+
+.painting-thumbnail-vertical{
+    height: 130px;
 }
 
 .painting-container{
-    /* to do */
     margin: auto;
-    z-index: -1;
-    /* position: absolute; */
-    
+    z-index: 100;    
     width: 1100px;
-    height: 70%;
+    height: 100%;
 }
 
 /* .painting-container div{
@@ -277,14 +364,15 @@ ul.breadcrumb li a:hover {
     height: 50%;
     /* bottom: 0px; */
     border-left: #F38181 dashed;
-    z-index: -1;
+    z-index: 3;
+    width: 250px;
 
 }
 
 
 .painting-container>div:nth-child(odd){
-    bottom: 0;
-    height: 40%;
+    bottom: 0%;
+    height: 52%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -292,8 +380,8 @@ ul.breadcrumb li a:hover {
 }
 
 .painting-container>div:nth-child(even){
-    top: 30%;
-    height: 30%;
+    top: 0%;
+    height: 45%;
 }
 
 /* .painting-container div:nth-child(odd) img{
@@ -307,11 +395,23 @@ ul.breadcrumb li a:hover {
     top: 0px;    
 }
 
+.painting-container div:nth-child(odd) div{
+    top: 45px;
+}
+
 .painting-intro{
     height: auto;
     margin: auto auto 0px 5px;
     padding: 0px;
     vertical-align: bottom;
+}
+
+.painting-intro h3{
+    line-height: 14px;
+}
+
+.painting-intro .subtitle{
+    line-height: 14px;
 }
 
 .thumbnail-heading{
@@ -327,23 +427,161 @@ ul.breadcrumb li a:hover {
 }
 
 #I1{
-    left: 150px;
+    left: 82.5px;
 }
 
 #I2{
-    left: 400px;
+    left: 330px;
 }
 
 #I3{
-    left: 400px;
+    left: 330px;
 }
 #I4{
-    left: 615px;
+    left: 550px;
+
 }
 #I5{
-    left: 950px;
-    width: 175px;
+    left: 767.5px;
     border-left: none;
     border-right: #F38181 dashed;
     text-align: right;
+}
+
+
+
+/*painting page*/
+.painting-container-big{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: top;
+    padding: 0px 40px 0px 20px;
+    margin: 50px auto 20px auto;
+    height: 80%;
+}
+
+.painting-container-arrow{
+    flex: 0 0 8%;
+    vertical-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.painting-container-arrow img{
+    vertical-align: center;
+    margin: auto;
+}
+
+.painting-container-img{
+    flex: 0 0 40%;
+    text-align: center;
+}
+
+.painting-container-text{
+    flex: 0 0 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.painting-container-text p{
+    font-size: 13px;
+}
+
+.arrow{
+    width: 50px;
+}
+
+.painting-full{
+    max-width: 600px;
+    max-height: 450px;
+}
+
+.artist-container-outer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.artist-container-inner{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.artist-container-left{
+    display: flex;
+    flex-direction: column;
+    flex-direction: 0 0 30%;
+}
+
+.artist-profile{
+    width: 80px;
+}
+
+.artist-container-right{
+    flex: 0 0 70%;
+}
+
+/* animation */
+.fadeIn{
+    animation: fadeIn 1s;
+    animation-fill-mode: forwards;
+
+}
+.fadeOut{
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+
+}
+
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+.magictime {
+    transition: background-color 2s ease;
+    background-color: red;
+}
+
+.transition-1 {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+    background-color: #FCD9D9;
+    transition: 0.5s ease-out;
+}
+
+.transition-1.is-active{
+    right: 0px;
+  }
+
+.transition-2 {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    bottom: 0;
+    z-index: 101;
+    background-color: #FCD9D9;
+    transition: 0.5s ease-out;
+}
+
+.transition-2.is-active{
+    left: 0px;
+  }
+
+.colorBackground{
+    background-color : #FCD9D9;
+}    
+.shadow{
+    filter: drop-shadow(2px 2px 5px #7A7A7A);
 }
