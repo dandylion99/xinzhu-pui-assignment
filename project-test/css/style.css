@@ -1,3 +1,13 @@
+:root {
+    --theme-color-Neoclassicism: #D09C6D;
+    --main-bg-color-Neoclassicism: #F1E1D3;
+    --theme-color-Impressionism: #F38181;
+    --main-bg-color-Impressionism: #FCD9D9;
+    --theme-color: #D09C6D;
+    --main-bg-color: #F1E1D3;
+  }
+
+
 html{
     background-color: #F5EFE6;
 
@@ -89,10 +99,6 @@ h4{
     font-weight: 600;
 }
 
-img{
-    /* object-fit: scale-down; */
-    /*float: left; */
-}
 
 .italic{
     font-style: italic;
@@ -107,11 +113,11 @@ img{
     padding-top: 0px;
     padding-bottom: 0px;
 
-    color: #F38181;
+    color: var(--theme-color);
 }
 
 .movement-feature{
-    color: #F38181;
+    color: var(--theme-color);
     font-style: italic;
     font-weight: 600;
     font-size: 16px;
@@ -208,6 +214,7 @@ ul.breadcrumb li a:hover {
 
 .movement-box{
     position: absolute;
+    cursor: pointer;
 
 }
 
@@ -216,6 +223,9 @@ ul.breadcrumb li a:hover {
     width: 100px;
     border-radius: 7px;
     text-align: center;
+    transition: 0.2s linear;
+    filter: drop-shadow(2px 2px 2px #7A7A7A);
+
     /* background-color: attr(data-color); */
 }
 
@@ -224,8 +234,8 @@ ul.breadcrumb li a:hover {
     left: 15px;
 }
 
-#Neoclassicism > div{
-    background-color: #D4A5A5;
+#Neoclassicism .movement-bar{
+    background-color: #D09C6D;
     width: 500px;
 }
 
@@ -234,7 +244,7 @@ ul.breadcrumb li a:hover {
     left: 225px;
 }
 
-#Romanticism > div{
+#Romanticism .movement-bar{
     background-color: #A6D0E4;
     width: 366.67px;
 }
@@ -244,7 +254,7 @@ ul.breadcrumb li a:hover {
     left: 513px;
 }
 
-#Realism > div{
+#Realism .movement-bar{
     background-color: #FCC433;
     width: 220px;
 }
@@ -254,7 +264,7 @@ ul.breadcrumb li a:hover {
     left: 720px;
 }
 
-#Impressionism > div{
+#Impressionism .movement-bar{
     background-color: #F38181;
     width: 220px;
 }
@@ -264,7 +274,7 @@ ul.breadcrumb li a:hover {
     left: 795px;
 }
 
-#Post-Impressionism > div{
+#Post-Impressionism .movement-bar{
     background-color: #FFB319;
     width: 288px;
 }
@@ -274,13 +284,13 @@ ul.breadcrumb li a:hover {
     left: 795px;
 }
 
-#Symbolism > div{
+#Symbolism .movement-bar{
     background-color: #95E1D3;
     width: 215px;
 }
 
 
-.movement-bar:hover{
+.movement-bar.hover{
     height: 35px;
 }
 
@@ -323,21 +333,26 @@ ul.breadcrumb li a:hover {
     left: 278px;
     width: 810px;
     height: 20px;
-    background-color: #F38181;
+    background-color: var(--theme-color);
     opacity: 100%;
     border-radius: 10px;
     z-index: -1;
 }
 
-/* .painting-line{
-    width: 2px;
-    height: 100px;
-    color:#F38181;
-    border-style: dashed;
+#Neoclassicism .movement-time-bar{
     position: absolute;
-    top: 0px;
-} */
+    top: 40%;
+    left: 15px;
+    width: 860px;
+    height: 20px;
+    background-color: var(--theme-color);
+    opacity: 100%;
+    border-radius: 10px;
+    z-index: -1;
+}
+
 .painting-thumbnail{
+    /* object-fit: cover; */
     width: 170px;
     max-height: 110px;
 }
@@ -353,22 +368,16 @@ ul.breadcrumb li a:hover {
     height: 100%;
 }
 
-/* .painting-container div{
-    display: inline-block;
-    position: relative;
-} */
-
 .painting-box{
     vertical-align: bottom;
     position: absolute;
     height: 50%;
     /* bottom: 0px; */
-    border-left: #F38181 dashed;
+    border-left: var(--theme-color) dashed;
     z-index: 3;
     width: 250px;
 
 }
-
 
 .painting-container>div:nth-child(odd){
     bottom: 0%;
@@ -380,13 +389,9 @@ ul.breadcrumb li a:hover {
 }
 
 .painting-container>div:nth-child(even){
-    top: 0%;
+    top: 0;
     height: 45%;
 }
-
-/* .painting-container div:nth-child(odd) img{
-    bottom: 0px;
-} */
 
 .painting-container div:nth-child(even) img{
     top: 45px;    
@@ -444,7 +449,25 @@ ul.breadcrumb li a:hover {
 #I5{
     left: 767.5px;
     border-left: none;
-    border-right: #F38181 dashed;
+    border-right: var(--theme-color) dashed;
+    text-align: right;
+}
+
+#N1{
+    left: 264px;
+}
+
+#N2{
+    left: 724px;
+    border-left: none;
+    border-right: var(--theme-color) dashed;
+    text-align: right;
+}
+
+#N3{
+    left: 790px;
+    border-left: none;
+    border-right: var(--theme-color) dashed;
     text-align: right;
 }
 
@@ -466,6 +489,12 @@ ul.breadcrumb li a:hover {
     vertical-align: center;
     display: flex;
     align-items: center;
+    cursor: pointer;
+}
+
+.painting-container-arrow:hover{
+    filter: drop-shadow(2px 2px 5px #7A7A7A);
+
 }
 
 .painting-container-arrow img{
@@ -512,6 +541,8 @@ ul.breadcrumb li a:hover {
     display: flex;
     flex-direction: column;
     flex-direction: 0 0 30%;
+    align-items: center;
+    text-align: center;
 }
 
 .artist-profile{
@@ -521,6 +552,12 @@ ul.breadcrumb li a:hover {
 .artist-container-right{
     flex: 0 0 70%;
 }
+
+/* painting page smaller screen */
+@media (max-width: 600px) {
+    
+}
+
 
 /* animation */
 .fadeIn{
@@ -544,10 +581,6 @@ ul.breadcrumb li a:hover {
     }
 }
 
-.magictime {
-    transition: background-color 2s ease;
-    background-color: red;
-}
 
 .transition-1 {
     position: fixed;
@@ -556,7 +589,7 @@ ul.breadcrumb li a:hover {
     width: 100%;
     height: 100%;
     z-index: 101;
-    background-color: #FCD9D9;
+    background-color: var(--main-bg-color);
     transition: 0.5s ease-out;
 }
 
@@ -571,7 +604,7 @@ ul.breadcrumb li a:hover {
     width: 100%;
     bottom: 0;
     z-index: 101;
-    background-color: #FCD9D9;
+    background-color: var(--main-bg-color);
     transition: 0.5s ease-out;
 }
 
@@ -580,10 +613,15 @@ ul.breadcrumb li a:hover {
   }
 
 .colorBackground{
-    background-color : #FCD9D9;
+    background-color : var(--main-bg-color);
 }    
+
 .shadow{
     filter: drop-shadow(2px 2px 5px #7A7A7A);
+}
+
+.all-shadow{
+    box-shadow: #7A7A7A 0 0 15px;
 }
 
 .scaled{

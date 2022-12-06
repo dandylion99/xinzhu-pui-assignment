@@ -1,19 +1,52 @@
-class Painting {
-    ID;
-    name;
-    img;
-    artist;
-    year;
-    intro;
-    artist_year;
-    artist_img;
-    artist_intro;
+// update the painting page based on id
+function updatePainting(paintingID,currentPainting){
+    let painting = currentPainting;
+    let imgElement = document.querySelector(".painting-full");
+    imgElement.src = "assets/"+painting['img'];
 
-    constructor(ID) {
-        this.ID = ID;
-   }
+    let textElementHeading = document.querySelector(".painting-container-text h3");
+    textElementHeading.innerText = painting['name'];
+    let textElementHeading2 = document.querySelector(".painting-container-text > h4");
+    textElementHeading2.innerText = painting['artist']+', '+painting['year'];    
+    let textElementParagraph = document.querySelector(".painting-container-text > p");
+    textElementParagraph.innerText = painting['intro'];
+
+    let artistImg = document.querySelector(".artist-profile");
+    artistImg.src = "assets/"+painting['artist_img'];
+
+    let artistName = document.querySelector(".artist-container-left > p");
+    artistName.innerHTML = painting['artist']+"<br>"+painting['artist_year'];
+
+    let artistIntro = document.querySelector(".artist-container-right > p");
+    artistIntro.innerText = painting['artist_intro'];
+
+
+    $("#painting-title").text(painting['name']);
+    let newURL = "painting.html?id="+paintingID;
+    $("#painting-title").attr("href",newURL);
+
+    movement = paintingID.replace(/[0-9]/g, ''); //reference: https://stackoverflow.com/questions/4993764/how-to-remove-numbers-from-a-string
+    movement = findMovement(paintingID);
+
+    $('#movement-name').text(movement.key);
+    let mURL = "movement-"+movement+".html";
+    $("#movement-name").attr("href", mURL);
 }
 
+function findMovement(paintingID){
+    let movement = "";
+
+        for (let m in movements){
+            // get only the letters in painting ID, which is movement's short_code
+            // reference: https://stackoverflow.com/questions/4993764/how-to-remove-numbers-from-a-string
+            if (movements[m]['short_code'] == paintingID.replace(/[0-9]/g, '')){ 
+                movement = m;
+            }
+        }
+    return movement;
+}
+
+// js for index page
 //reference: https://stackoverflow.com/questions/24681127/play-animation-then-load-next-page
 if (document.URL.includes("index")){
     $(document).ready(function() {
@@ -52,8 +85,8 @@ if (document.URL.includes("index")){
             $(".movement-container")
                 .addClass(fade_out)
                 .bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
-                    function() {
-                    window.location.href = "movement.html"; 
+                    function() {           
+                    window.location.href = "movement-Impressionism.html"; 
                 });
 
             }
@@ -61,6 +94,12 @@ if (document.URL.includes("index")){
       
         $(".movement-box").click(function(e) {
             e.preventDefault();    
+            let id = $(this).attr('id');
+
+            // pages other than thes two haven't been devleoped yet, so currently all other four pages point to Impressionism
+            if ((id!="Impressionism")&(id!="Neoclassicism")){
+                id= "Impressionism";
+            }
 
             $(".timeline-bar")
                 .removeClass("scaled-off")
@@ -73,7 +112,7 @@ if (document.URL.includes("index")){
                 .addClass(fade_out)
                 .bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
                     function() {
-                    window.location.href = "movement.html"; 
+                    window.location.href = "movement-"+id+".html"; 
                 });
         });
 
@@ -84,20 +123,20 @@ if (document.URL.includes("index")){
 
             let imgURL = "url(assets/" + img + ")";
             console.log(imgURL);
+            $(this).children(".movement-bar").addClass("hover");
             $('.background')
                 .css("background-image",imgURL);
             setTimeout(function(){
                 $('.background')   
                 .removeClass("fade-out")
                 .addClass("fade-in");
-                },10); //wait for the background image be replaced
-            
-            
-                
+                },10); //wait for the background image be replaced      
                 // .css("background-image",'url("assets/Impression_Sunrise.png")');
         });
 
         $(".movement-box").mouseleave(function(){
+            $(this).children(".movement-bar").removeClass("hover");
+
             $('.background')
                 .removeClass("fade-in")
                 .addClass("fade-out");
@@ -105,65 +144,11 @@ if (document.URL.includes("index")){
 
     })
 }
-
-
-// update the painting page based on id
-function updatePainting(currentPainting){
-    let painting = currentPainting;
-    let imgElement = document.querySelector(".painting-full");
-    imgElement.src = "assets/"+painting['img'];
-
-    let textElementHeading = document.querySelector(".painting-container-text h3");
-    console.log(textElementHeading);
-    textElementHeading.innerText = painting['name'];
-    let textElementHeading2 = document.querySelector(".painting-container-text > h4");
-    textElementHeading2.innerText = painting['artist']+', '+painting['year'];    
-    let textElementParagraph = document.querySelector(".painting-container-text > p");
-    textElementParagraph.innerText = painting['intro'];
-
-    let artistImg = document.querySelector(".artist-profile");
-    artistImg.src = "assets/"+painting['artist_img'];
-
-    let artistName = document.querySelector(".artist-container-left > p");
-    artistName.innerHTML = painting['artist']+"<br>"+painting['artist_year'];
-
-    let artistIntro = document.querySelector(".artist-container-right > p");
-    artistIntro.innerText = painting['artist_intro'];
-}
-
-
-if(document.URL.includes("painting")){
-    // get parameter from URL
-    const queryString = window.location.search;
-    const params = new URLSearchParams(queryString);
-    const paintingID = params.get('id');
-
-    let currentPainting = paintings[paintingID];
-    console.log(currentPainting);
-    updatePainting(currentPainting);
-    html = document.querySelector("html");
-
-    //To do: relace with other colors using variables
-    html.style.backgroundColor = '#FCD9D9'; 
-
-
-    $(".painting-container-arrow").click(function(){
-
-        $("main")
-            .addClass("fadeOut");
-        $(".painting-container-arrow")
-            .addClass("fadeOut")
-            .bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
-            function() {
-                const transition_el = document.querySelector('.transition');
-                window.location.href = "movement.html";
-            });
-    })
-}
     
+// js for movement pages
 if(document.URL.includes("movement")){
     const transition_el = document.querySelector('.transition');
-
+    
     // if user jump to this page from the painting page, then use the slide animation
     if(document.referrer.includes("painting")){
         transition_el.classList.add('is-active');
@@ -181,14 +166,18 @@ if(document.URL.includes("movement")){
     
     
     window.onload = () => {
+        ID = $('body').attr('id');
+
+        // set theme color
+        $(':root').css('--theme-color', movements[ID]["theme_color"]);
+        $(':root').css('--main-bg-color', movements[ID]["main_bg_color"]);
+
+
         const anchors = document.querySelectorAll('.painting-box a');
             
         for(let i=0; i<anchors.length; i++){
             const anchor = anchors[i];
             anchor.addEventListener('mouseover', e=>{
-                // let s = "#"+e.target.parentNode.id;
-                // let p = document.querySelector("#I1");
-                // p.classList.add('shadow');
                 anchor.classList.add('shadow');
 
             });
@@ -199,18 +188,55 @@ if(document.URL.includes("movement")){
                 e.preventDefault();    
                 console.log(anchor);
 
-
-        
                 transition_el.classList.add('is-active');
-                // console.log(anchor.href);
                 setInterval(() => {
                     window.location.href = anchor.href;
-                //  window.location.href = "painting.html?id=I1";
                 },500);
             });
-        }
-        
+            
+        }      
 }}
+
+// js for painting pages
+if(document.URL.includes("painting")){
+    // get parameter from URL
+    const queryString = window.location.search;
+    const params = new URLSearchParams(queryString);
+    const paintingID = params.get('id');
+
+    let currentPainting = paintings[paintingID];
+    console.log(currentPainting);
+
+    updatePainting(paintingID, currentPainting);
+    html = document.querySelector("html");
+
+    window.onload = () => {
+        let movement = findMovement(paintingID);
+        let backURL = "movement-"+movement+".html";
+        movement = movements[movement];
+
+   
+        $(':root').css('--theme-color', movement["theme_color"]);
+        $(':root').css('--main-bg-color', movement["main_bg_color"]);
+        html.style.backgroundColor = movement["main_bg_color"]; 
+
+        // animation when clicking the arrow
+        $(".painting-container-arrow").click(function(){
+            $("main")
+                .addClass("fadeOut");
+            $(".painting-container-arrow")
+                .addClass("fadeOut")
+                .bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+                function() {
+                    const transition_el = document.querySelector('.transition');
+                    window.location.href = backURL;
+                });
+        })
+    }  
+}
+
+
+
 
 
 

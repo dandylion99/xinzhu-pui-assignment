@@ -1,25 +1,78 @@
 const movements = {
     "Neoclassicism":{
         "img": "Oath_of_the_Horatii.jpeg",
+        "short_code": "N",
+        "theme_color": "#D09C6D",
+        "main_bg_color": "#F1E1D3"
     },
     "Romanticism":{
-        "img": "The_Raft_of_the_Medusa.jpeg"
+        "img": "The_Raft_of_the_Medusa.jpeg",
+        "short_code": "Ro",
+        "theme_color": "#D09C6D",
+        "main_bg_color": "#F1E1D3"
     },
     "Realism":{
-        "img":"The_Gleaners.jpeg"
+        "img":"The_Gleaners.jpeg",
+        "short_code": "Re",
+        "theme_color": "#D09C6D",
+        "main_bg_color": "#F1E1D3"
     },
     "Impressionism":{
-        "img":"Impression_Sunrise.png"
+        "img":"Impression_Sunrise.png",
+        "short_code": "I",
+        "theme_color": "#F38181",
+        "main_bg_color": "#FCD9D9"
     },
     "Post-Impressionism":{
-        "img":"The_Starry_Night.jpeg"
+        "img":"The_Starry_Night.jpeg",
+        "short_code": "P",
+        "theme_color": "#D09C6D",
+        "main_bg_color": "#F1E1D3"
     },
     "Symbolism":{
-        "img":"Death_and_Life.jpeg"
+        "img":"Death_and_Life.jpeg",
+        "short_code": "S",
+        "theme_color": "#D09C6D",
+        "main_bg_color": "#F1E1D3"
     }
 }
 
 const paintings = {
+    "N1":{
+        "name": "Oath of the Horatii",
+        "img": "Oath_of_the_Horatii.jpeg",
+        "artist": "Jacques-Louis David",
+        "year": "1784",
+        "intro": `The painting depicts the Roman Horatius family, who, according to Titus Livius' Ab Urbe Condita (From the Founding of the City) had been chosen for a ritual duel against three members of the Curiatii, a family from Alba Longa, in order to settle disputes between the Romans and the latter city.
+        The painting immediately became a huge success with critics and the public, and remains one of the best known paintings in the Neoclassical style.
+        `,
+        "artist_year": "1748-1825",
+        "artist_img": "Jacques_Louis_David.png",
+        "artist_intro":  "Jacques-Louis David was a French painter in the Neoclassical style, considered to be the preeminent painter of the era. In the 1780s, his cerebral brand of history painting marked a change in taste away from Rococo frivolity toward classical austerity and severity and heightened feeling, harmonizing with the moral climate of the final years of the Ancien Régime."
+    },
+    "N2":{
+        "name": "Dante and Virgil",
+        "img": "Dante_and_Virgil.jpeg",
+        "artist": "William-Adolphe Bouguereau",
+        "year": "1850",
+        "intro": `The painting depicts a scene from Dante's Divine Comedy, which narrates a journey through Hell by Dante and his guide Virgil. In the scene the author and his guide are looking on as two damned souls are entwined in eternal combat. One of the souls is an alchemist and heretic named Capocchio. He is being bitten on the neck by the trickster Gianni Schicchi, who had used fraud to claim another man's inheritance.
+        It was Bougereau's third and ultimately unsuccessful attempt to win the coveted Prix de Rome, even though he had submitted a work that he knew would appeal to the judges. He did however succeed in his efforts later in the year when Shepherds Find Zenobia on the Banks of the Araxes won the consolation second prize of the year.
+        `,
+        "artist_year": "1825-1905",
+        "artist_img": "William_Adolphe_Bouguereau.png",
+        "artist_intro": "William-Adolphe Bouguereau was a French academic painter. In his realistic genre paintings, he used mythological themes, making modern interpretations of classical subjects, with an emphasis on the female human body. During his life, he enjoyed significant popularity in France and the United States, was given numerous official honors, and received top prices for his work."
+    },
+    "N3":{
+        "name": "The Source",
+        "img": "The_Source.jpeg",
+        "artist": "Jean-Auguste-Dominique Ingres",
+        "year": "1856",
+        "intro": `The painting depicts a nude standing upright between an opening in the rocks and holding in her hands a pitcher, from which water flows. She thus represents a water source or spring, for which source is the normal French word, and which, in classical literature, is sacred to the Muses and a source of poetic inspiration. She stands between two flowers, with their "vulnerability to males who wish to pluck them", and is framed by ivy, plant of Dionysus the god of disorder, regeneration, and ecstasy. The water she pours out separates her from the viewer, as rivers mark boundaries of which the crossing is symbolically important.
+        Art historians Frances Fowle and Richard Thomson suggest that there is a "symbolic unity of woman and nature" in The Source, where the flowering plants and water serve as a background which Ingres fills with woman's "secondary attributes".`,
+        "artist_year": "1780-1867",
+        "artist_img": "Jean_Auguste_Dominique_Ingres.png",
+        "artist_intro": "Ingres was profoundly influenced by past artistic traditions and aspired to become the guardian of academic orthodoxy against the ascendant Romantic style. His expressive distortions of form and space made him an important precursor of modern art, influencing Picasso, Matisse and other modernists." 
+    },
     "I1":{
         "name": "Olympia",
         "img": "Olympia.jpg",
