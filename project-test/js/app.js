@@ -74,24 +74,24 @@ if (document.URL.includes("index")||(!(document.URL.includes("movement"))&&!(doc
         let node = document.querySelector("body");
         
         // consider removing this feature because it conflits with the horinzontal scrolling
-        // node.addEventListener('wheel', (event) => {
-        //     if(event.deltaY<0){
-        //         $(".timeline-bar")
-        //         .removeClass("scaled-off")
-        //         .addClass("scaled");
-        //     $(".timedot")
-        //         .addClass(fade_out);
-        //     $(".intro-container")
-        //         .addClass(fade_out);
-        //     $(".movement-container")
-        //         .addClass(fade_out)
-        //         .bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
-        //             function() {           
-        //             window.location.href = "movement-Impressionism.html"; 
-        //         });
+        node.addEventListener('wheel', (event) => {
+            if(event.deltaY<0){
+                $(".timeline-bar")
+                .removeClass("scaled-off")
+                .addClass("scaled");
+            $(".timedot")
+                .addClass(fade_out);
+            $(".intro-container")
+                .addClass(fade_out);
+            $(".movement-container")
+                .addClass(fade_out)
+                .bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+                    function() {           
+                    window.location.href = "movement-Impressionism.html"; 
+                });
 
-        //     }
-        // });
+            }
+        });
       
         $(".movement-box").click(function(e) {
             e.preventDefault();    
@@ -159,13 +159,13 @@ if(document.URL.includes("movement")){
     }
 
     // consider removing this feature because it conflits with the horinzontal scrolling
-    // node = document.querySelector("body");
-    // node.addEventListener('wheel', (event) => {
-    //     if(event.deltaY>0){
-    //         window.location.href = "index.html";
+    node = document.querySelector("body");
+    node.addEventListener('wheel', (event) => {
+        if(event.deltaY>0){
+            window.location.href = "index.html";
 
-    //     }
-    // });
+        }
+    });
     
     
     window.onload = () => {
