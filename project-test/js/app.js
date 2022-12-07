@@ -48,7 +48,7 @@ function findMovement(paintingID){
 
 // js for index page
 //reference: https://stackoverflow.com/questions/24681127/play-animation-then-load-next-page
-if (document.URL.includes("index")|!(document.URL.includes("movement"))|!(document.URL.includes("painting"))){
+if (document.URL.includes("index")|(!(document.URL.includes("movement"))&!(document.URL.includes("painting")))){
     $(document).ready(function() {
         const fade_out = [
             'animate__animated',
