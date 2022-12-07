@@ -28,7 +28,7 @@ function updatePainting(paintingID,currentPainting){
     movement = paintingID.replace(/[0-9]/g, ''); //reference: https://stackoverflow.com/questions/4993764/how-to-remove-numbers-from-a-string
     movement = findMovement(paintingID);
 
-    $('#movement-name').text(movement.key);
+    $('#movement-name').text(movement);
     let mURL = "movement-"+movement+".html";
     $("#movement-name").attr("href", mURL);
 }
@@ -48,7 +48,7 @@ function findMovement(paintingID){
 
 // js for index page
 //reference: https://stackoverflow.com/questions/24681127/play-animation-then-load-next-page
-if (document.URL.includes("index")){
+if (document.URL.includes("index")|!(document.URL.includes("movement"))|!(document.URL.includes("painting"))){
     $(document).ready(function() {
         const fade_out = [
             'animate__animated',
