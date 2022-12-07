@@ -48,7 +48,7 @@ function findMovement(paintingID){
 
 // js for index page
 //reference: https://stackoverflow.com/questions/24681127/play-animation-then-load-next-page
-if (document.URL.includes("index")|(!(document.URL.includes("movement"))&!(document.URL.includes("painting")))){
+if (document.URL.includes("index")||(!(document.URL.includes("movement"))&&!(document.URL.includes("painting")))){
     $(document).ready(function() {
         const fade_out = [
             'animate__animated',
@@ -73,24 +73,25 @@ if (document.URL.includes("index")|(!(document.URL.includes("movement"))&!(docum
 
         let node = document.querySelector("body");
         
-        node.addEventListener('wheel', (event) => {
-            if(event.deltaY<0){
-                $(".timeline-bar")
-                .removeClass("scaled-off")
-                .addClass("scaled");
-            $(".timedot")
-                .addClass(fade_out);
-            $(".intro-container")
-                .addClass(fade_out);
-            $(".movement-container")
-                .addClass(fade_out)
-                .bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
-                    function() {           
-                    window.location.href = "movement-Impressionism.html"; 
-                });
+        // consider removing this feature because it conflits with the horinzontal scrolling
+        // node.addEventListener('wheel', (event) => {
+        //     if(event.deltaY<0){
+        //         $(".timeline-bar")
+        //         .removeClass("scaled-off")
+        //         .addClass("scaled");
+        //     $(".timedot")
+        //         .addClass(fade_out);
+        //     $(".intro-container")
+        //         .addClass(fade_out);
+        //     $(".movement-container")
+        //         .addClass(fade_out)
+        //         .bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+        //             function() {           
+        //             window.location.href = "movement-Impressionism.html"; 
+        //         });
 
-            }
-        });
+        //     }
+        // });
       
         $(".movement-box").click(function(e) {
             e.preventDefault();    
@@ -156,13 +157,15 @@ if(document.URL.includes("movement")){
             transition_el.classList.remove('is-active');
         }, 500);   
     }
-    node = document.querySelector("body");
-    node.addEventListener('wheel', (event) => {
-        if(event.deltaY>0){
-            window.location.href = "index.html";
 
-        }
-    });
+    // consider removing this feature because it conflits with the horinzontal scrolling
+    // node = document.querySelector("body");
+    // node.addEventListener('wheel', (event) => {
+    //     if(event.deltaY>0){
+    //         window.location.href = "index.html";
+
+    //     }
+    // });
     
     
     window.onload = () => {

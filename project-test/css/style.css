@@ -77,12 +77,22 @@ a{
     display: block;
 }
 
+
 h1{
     font-style: normal;
     font-weight: 600;
     font-size: 30px;
     line-height: 35px;
     margin: 10px 50px 0px auto;
+}
+
+.heading1{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 35px;
+    /* margin: 10px 50px 0px auto; */
+    display: inline-block;
 }
 
 h3{
@@ -92,7 +102,22 @@ h3{
     padding: 0px;
 }
 
+.heading3{
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0px;
+    padding: 0px;
+}
+
 h4{
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0px;
+    padding: 0px;
+    font-weight: 600;
+}
+
+.heading4{
     font-size: 16px;
     line-height: 24px;
     margin: 0px;
@@ -569,23 +594,43 @@ ul.breadcrumb li a:hover {
     header{
         max-width: 550px;
         word-break:break-all;
+        height: 11vh;
     }
 
-    .h1{
+    h1{
+        visibility: hidden;
+    }
+    .main-heading{
+        column-count: 1;
+    }
+
+    .heading1{
+        display: block;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 25px;
+        margin: 0px;
+        line-break: auto;
+    }
+
+    
+
+    /* h1{
         font-style: normal;
         font-weight: 600;
         font-size: 20px;
         line-height: 25px;
         margin: 10px 20px 0px auto;
-    }
-    .h3{
+    } */
+    h3{
         font-size: 18px;
         line-height: 20px;
         margin: 0px;
         padding: 0px;
     }
     
-    .h4{
+    h4{
         font-size: 16px;
         line-height: 24px;
         margin: 0px;
@@ -593,7 +638,69 @@ ul.breadcrumb li a:hover {
         font-weight: 600;
     }
 
+    /* movement page */
+    .intro-container{
+        height: 19vh;
+        width: 350px;
+        margin: 0px auto 0px auto;
+    }
+    
+    .scroll-container{
+        overflow-x: hidden;
+        height: 100%;
+        width: 350px;
+    }
+    
+    
+    .timeline-container{
+        overflow-x: scroll;
+        height: 65vh;
+        vertical-align: middle;
+        width: 350px;
+        margin: 0px auto 0px auto;
+        /* width: 100vw; */
+        /* display: flex;
+        flex-direction: column;
+        justify-content: center; */
+        /* overflow-x: scroll; */
+        position: relative;
+    }
 
+    .timeline-bar{
+        z-index: 0;
+        /* height: 800px; */
+        width: 1100px;
+        vertical-align: middle;
+        margin: auto;
+        position: absolute;
+        top: 45%;
+    }
+
+    .dot-container{
+        margin: auto;
+        width: 1100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .movement-heading{
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .movement-feature{
+        font-size: 14px;
+        display: block;
+        
+    }
+
+
+
+    /* painting page */
+    .intro-container > p{
+        visibility: hidden;
+    }
     .painting-container-big{
         display: flex;
         flex-direction: row;
@@ -601,7 +708,7 @@ ul.breadcrumb li a:hover {
         align-items: top;
         padding: 0px 5px 0px 5px;
         margin: 10px auto 10px auto;
-        height: 80%;
+        height: 70vh;
     }
     .painting-container-arrow{
         flex: 1 1 2%;
@@ -624,7 +731,7 @@ ul.breadcrumb li a:hover {
         width: auto;
         height: auto;
         max-width: 300px;
-        max-height: 400px;
+        max-height: 300px;
     }
 
 }
