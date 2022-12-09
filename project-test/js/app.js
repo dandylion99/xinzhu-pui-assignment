@@ -3,6 +3,7 @@ function updatePainting(paintingID,currentPainting){
     let painting = currentPainting;
     let imgElement = document.querySelector(".painting-full");
     imgElement.src = "assets/"+painting['img'];
+    imgElement.alt = painting['alt'];
 
     let textElementHeading = document.querySelector(".painting-container-text h3");
     textElementHeading.innerText = painting['name'];
@@ -13,6 +14,7 @@ function updatePainting(paintingID,currentPainting){
 
     let artistImg = document.querySelector(".artist-profile");
     artistImg.src = "assets/"+painting['artist_img'];
+    artistImg.alt = painting['artist_alt'];
 
     let artistName = document.querySelector(".artist-container-left > p");
     artistName.innerHTML = painting['artist']+"<br>"+painting['artist_year'];
@@ -73,25 +75,6 @@ if (document.URL.includes("index")||(!(document.URL.includes("movement"))&&!(doc
 
         let node = document.querySelector("body");
         
-        // consider removing this feature because it conflits with the horinzontal scrolling
-        node.addEventListener('wheel', (event) => {
-            if(event.deltaY<0){
-                $(".timeline-bar")
-                .removeClass("scaled-off")
-                .addClass("scaled");
-            $(".timedot")
-                .addClass(fade_out);
-            $(".intro-container")
-                .addClass(fade_out);
-            $(".movement-container")
-                .addClass(fade_out)
-                .bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
-                    function() {           
-                    window.location.href = "movement-Impressionism.html"; 
-                });
-
-            }
-        });
       
         $(".movement-box").click(function(e) {
             e.preventDefault();    
@@ -143,7 +126,24 @@ if (document.URL.includes("index")||(!(document.URL.includes("movement"))&&!(doc
                 .addClass("fade-out");
         });
 
+
+        // for mobile screen size
+        // function myFunction(x) {
+        //     if (x.matches) { // If media query matches
+        //       document.body.style.backgroundColor = "yellow";
+        //     } 
+        //   }
+          
+        var x = window.matchMedia("(max-width: 600px)");
+        if(x.matches){
+          console.log("333");
+
+        }
+      //   myFunction(x); // Call listener function at run time
+      //   x.addListener(myFunction); // Attach listener function on state changes
+
     })
+    
 }
     
 // js for movement pages
@@ -166,8 +166,7 @@ if(document.URL.includes("movement")){
 
         }
     });
-    
-    
+        
     window.onload = () => {
         ID = $('body').attr('id');
 
@@ -176,6 +175,17 @@ if(document.URL.includes("movement")){
         $(':root').css('--main-bg-color', movements[ID]["main_bg_color"]);
 
 
+        $('.painting-box').each(function(i, obj) {
+            // console.log(obj.id);
+            ID = obj.id
+            // console.log(paintings[ID]['alt']);
+            // obj.attr
+            console.log($("#"+ID+" img"));
+
+            $("#"+ID+" img").attr('alt', paintings[ID]['alt']);
+        });
+
+        // add animations
         const anchors = document.querySelectorAll('.painting-box a');
             
         for(let i=0; i<anchors.length; i++){
@@ -197,7 +207,8 @@ if(document.URL.includes("movement")){
                 },500);
             });
             
-        }      
+        }   
+        
 }}
 
 // js for painting pages

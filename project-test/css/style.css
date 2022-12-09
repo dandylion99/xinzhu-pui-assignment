@@ -594,7 +594,7 @@ ul.breadcrumb li a:hover {
     header{
         max-width: 550px;
         word-break:break-all;
-        height: 11vh;
+        height: 10vh;
     }
 
     h1{
@@ -640,7 +640,7 @@ ul.breadcrumb li a:hover {
 
     /* movement page */
     .intro-container{
-        height: 19vh;
+        height: 30vh;
         width: 350px;
         margin: 0px auto 0px auto;
     }
@@ -654,7 +654,7 @@ ul.breadcrumb li a:hover {
     
     .timeline-container{
         overflow-x: scroll;
-        height: 65vh;
+        height: 50vh;
         vertical-align: middle;
         width: 350px;
         margin: 0px auto 0px auto;
@@ -683,6 +683,9 @@ ul.breadcrumb li a:hover {
         flex-direction: row;
         justify-content: space-between;
     }
+    .painting-container{
+
+    }
 
     .movement-heading{
         font-size: 18px;
@@ -698,9 +701,9 @@ ul.breadcrumb li a:hover {
 
 
     /* painting page */
-    .intro-container > p{
+    /* .intro-container > p{
         visibility: hidden;
-    }
+    } */
     .painting-container-big{
         display: flex;
         flex-direction: row;
