@@ -81,41 +81,42 @@ if (document.URL.includes("index")||(!(document.URL.includes("movement"))&&!(doc
             let id = $(this).attr('id');
 
             // pages other than thes two haven't been devleoped yet, so currently all other four pages point to Impressionism
-            if ((id!="Impressionism")&(id!="Neoclassicism")){
-                id= "Impressionism";
-            }
-
-            $(".timeline-bar")
-                .removeClass("scaled-off")
-                .addClass("scaled");
-            $(".timedot")
-                .addClass(fade_out);
-            $(".intro-container")
-                .addClass(fade_out);
-            $(".movement-container")
-                .addClass(fade_out)
-                .bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
-                    function() {
-                    window.location.href = "movement-"+id+".html"; 
+            if ((id=="Impressionism")|(id=="Neoclassicism")){
+                $(".timeline-bar")
+                    .removeClass("scaled-off")
+                    .addClass("scaled");
+                $(".timedot")
+                    .addClass(fade_out);
+                $(".intro-container")
+                    .addClass(fade_out);
+                $(".movement-container")
+                    .addClass(fade_out)
+                    .bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+                        function() {
+                        window.location.href = "movement-"+id+".html"; 
                 });
-        });
-
+            }
+        })
         $(".movement-box").mouseover(function(){
-            let img = $(this).attr('id');
 
-            img = movements[img]['img'];
+            let ID = $(this).attr('id');
+            if ((ID=="Impressionism")|(ID=="Neoclassicism")){
 
-            let imgURL = "url(assets/" + img + ")";
-            console.log(imgURL);
-            $(this).children(".movement-bar").addClass("hover");
-            $('.background')
-                .css("background-image",imgURL);
-            setTimeout(function(){
-                $('.background')   
-                .removeClass("fade-out")
-                .addClass("fade-in");
-                },10); //wait for the background image be replaced      
-                // .css("background-image",'url("assets/Impression_Sunrise.png")');
+                img = movements[ID]['img'];
+
+                let imgURL = "url(assets/" + img + ")";
+                console.log(imgURL);
+                $(this).children(".movement-bar").addClass("hover");
+                $('.background')
+                    .css("background-image",imgURL);
+                setTimeout(function(){
+                    $('.background')   
+                    .removeClass("fade-out")
+                    .addClass("fade-in");
+                    },10); //wait for the background image be replaced      
+                    // .css("background-image",'url("assets/Impression_Sunrise.png")');
+            }
+    
         });
 
         $(".movement-box").mouseleave(function(){
@@ -125,7 +126,12 @@ if (document.URL.includes("index")||(!(document.URL.includes("movement"))&&!(doc
                 .removeClass("fade-in")
                 .addClass("fade-out");
         });
+        
+                
+            
 
+
+        
 
         // for mobile screen size
         // function myFunction(x) {
@@ -136,14 +142,12 @@ if (document.URL.includes("index")||(!(document.URL.includes("movement"))&&!(doc
           
         var x = window.matchMedia("(max-width: 600px)");
         if(x.matches){
-          console.log("333");
-
+            //to do
         }
       //   myFunction(x); // Call listener function at run time
       //   x.addListener(myFunction); // Attach listener function on state changes
 
-    })
-    
+        }) 
 }
     
 // js for movement pages
@@ -208,8 +212,9 @@ if(document.URL.includes("movement")){
             });
             
         }   
+    }
         
-}}
+}
 
 // js for painting pages
 if(document.URL.includes("painting")){

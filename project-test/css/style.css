@@ -5,6 +5,7 @@
     --main-bg-color-Impressionism: #FCD9D9;
     --theme-color: #D09C6D;
     --main-bg-color: #F1E1D3;
+    --inactive-color: #C1C1C1;
   }
 
 
@@ -241,7 +242,6 @@ ul.breadcrumb li a:hover {
 .movement-box{
     position: absolute;
     cursor: pointer;
-
 }
 
 .movement-bar{
@@ -251,8 +251,6 @@ ul.breadcrumb li a:hover {
     text-align: center;
     transition: 0.2s linear;
     filter: drop-shadow(2px 2px 2px #7A7A7A);
-
-    /* background-color: attr(data-color); */
 }
 
 #Neoclassicism{
@@ -268,21 +266,31 @@ ul.breadcrumb li a:hover {
 #Romanticism{
     top: 72.5%;
     left: 225px;
+    cursor: default;
+
 }
 
 #Romanticism .movement-bar{
-    background-color: #A6D0E4;
+    /* background-color: #A6D0E4; */
+    background-color: var(--inactive-color);
     width: 366.67px;
+    filter: none;
+
 }
 
 #Realism{
     top: 60%;
     left: 513px;
+    cursor: default;
+
 }
 
 #Realism .movement-bar{
-    background-color: #FCC433;
+    /* background-color: #FCC433; */
+    background-color: var(--inactive-color);
     width: 220px;
+    filter: none;
+
 }
 
 #Impressionism{
@@ -298,22 +306,34 @@ ul.breadcrumb li a:hover {
 #Post-Impressionism{
     top: 15%;
     left: 795px;
+    cursor: default;
+
 }
 
 #Post-Impressionism .movement-bar{
-    background-color: #FFB319;
+    /* background-color: #FFB319; */
+    background-color: var(--inactive-color);
     width: 288px;
+    filter: none;
+
 }
 
 #Symbolism{
     top: 0%;
     left: 795px;
+    cursor: default;
+
 }
 
 #Symbolism .movement-bar{
-    background-color: #95E1D3;
+    /* background-color: #95E1D3; */
+    background-color: var(--inactive-color);
     width: 215px;
+    filter: none;
+
 }
+
+
 
 
 .movement-bar.hover{
