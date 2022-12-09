@@ -1,3 +1,4 @@
+/*  styles shared by all pages */
 :root {
     --theme-color-Neoclassicism: #D09C6D;
     --main-bg-color-Neoclassicism: #F1E1D3;
@@ -8,22 +9,18 @@
     --inactive-color: #C1C1C1;
   }
 
-
 html{
     background-color: #F5EFE6;
 
 }
 
 .background{
-    /* background-image: url(""); */
     background-attachment: fixed;
-
     background-size: cover;
     background-color: rgba(255,255,255,0.3);
     opacity: 0%;
     background-blend-mode: lighten;
     position: absolute;
-    /* background-color: #000000; */
     top :0;
     left:0;
     bottom: 0;
@@ -31,15 +28,9 @@ html{
     z-index: -100;
 }
 
-.fade-in{
-    opacity: 60%;
-    transition: 0.5s ease-in;
-}
-
-.fade-out{
-    opacity: 0%;
-    transition: 0.5s ease-out;
-}
+.colorBackground{
+    background-color : var(--main-bg-color);
+}    
 
 .background-painting-fade-out{
     background-image: url("../assets/Impression_Sunrise.png");
@@ -59,8 +50,6 @@ header{
 
 body{
     font-family: MoMA Sans Web;
-   
-
 }
 
 p{
@@ -78,7 +67,6 @@ a{
     display: block;
 }
 
-
 h1{
     font-style: normal;
     font-weight: 600;
@@ -92,7 +80,6 @@ h1{
     font-weight: 600;
     font-size: 30px;
     line-height: 35px;
-    /* margin: 10px 50px 0px auto; */
     display: inline-block;
 }
 
@@ -126,7 +113,7 @@ h4{
     font-weight: 600;
 }
 
-
+/* index page */
 .italic{
     font-style: italic;
 }
@@ -194,17 +181,11 @@ ul.breadcrumb li a:hover {
     height: 100%;
 }
 
-
 .timeline-container{
     height: 65vh;
     vertical-align: middle;
     width: 1100px;
     margin: 0px auto 0px auto;
-    /* width: 100vw; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
-    /* overflow-x: scroll; */
     position: relative;
 }
 
@@ -229,14 +210,9 @@ ul.breadcrumb li a:hover {
 
 .movement-container{
     margin: 0px;
-    z-index: 1;
-    /* position: absolute; */
-    
+    z-index: 1;    
     width: 1100px;
     height: 100%;
-    /* overflow-x: scroll; */
-
-
 }
 
 .movement-box{
@@ -332,9 +308,6 @@ ul.breadcrumb li a:hover {
     filter: none;
 
 }
-
-
-
 
 .movement-bar.hover{
     height: 35px;
@@ -634,15 +607,6 @@ ul.breadcrumb li a:hover {
         line-break: auto;
     }
 
-    
-
-    /* h1{
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 25px;
-        margin: 10px 20px 0px auto;
-    } */
     h3{
         font-size: 18px;
         line-height: 20px;
@@ -678,17 +642,11 @@ ul.breadcrumb li a:hover {
         vertical-align: middle;
         width: 350px;
         margin: 0px auto 0px auto;
-        /* width: 100vw; */
-        /* display: flex;
-        flex-direction: column;
-        justify-content: center; */
-        /* overflow-x: scroll; */
         position: relative;
     }
 
     .timeline-bar{
         z-index: 0;
-        /* height: 800px; */
         width: 1100px;
         vertical-align: middle;
         margin: auto;
@@ -703,9 +661,6 @@ ul.breadcrumb li a:hover {
         flex-direction: row;
         justify-content: space-between;
     }
-    .painting-container{
-
-    }
 
     .movement-heading{
         font-size: 18px;
@@ -718,12 +673,6 @@ ul.breadcrumb li a:hover {
         
     }
 
-
-
-    /* painting page */
-    /* .intro-container > p{
-        visibility: hidden;
-    } */
     .painting-container-big{
         display: flex;
         flex-direction: row;
@@ -813,9 +762,15 @@ ul.breadcrumb li a:hover {
     left: 0px;
   }
 
-.colorBackground{
-    background-color : var(--main-bg-color);
-}    
+.fade-in{
+    opacity: 60%;
+    transition: 0.5s ease-in;
+}
+
+.fade-out{
+    opacity: 0%;
+    transition: 0.5s ease-out;
+}
 
 .shadow{
     filter: drop-shadow(2px 2px 5px #7A7A7A);

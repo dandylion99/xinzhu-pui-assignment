@@ -49,7 +49,6 @@ function findMovement(paintingID){
 }
 
 // js for index page
-//reference: https://stackoverflow.com/questions/24681127/play-animation-then-load-next-page
 if (document.URL.includes("index")||(!(document.URL.includes("movement"))&&!(document.URL.includes("painting")))){
     $(document).ready(function() {
         const fade_out = [
@@ -73,9 +72,8 @@ if (document.URL.includes("index")||(!(document.URL.includes("movement"))&&!(doc
                 .addClass("scaled-off");   
         }
 
-        let node = document.querySelector("body");
-        
-      
+
+        // page transition animation, reference: https://stackoverflow.com/questions/24681127/play-animation-then-load-next-page
         $(".movement-box").click(function(e) {
             e.preventDefault();    
             let id = $(this).attr('id');
@@ -126,27 +124,7 @@ if (document.URL.includes("index")||(!(document.URL.includes("movement"))&&!(doc
                 .removeClass("fade-in")
                 .addClass("fade-out");
         });
-        
-                
-            
-
-
-        
-
-        // for mobile screen size
-        // function myFunction(x) {
-        //     if (x.matches) { // If media query matches
-        //       document.body.style.backgroundColor = "yellow";
-        //     } 
-        //   }
           
-        var x = window.matchMedia("(max-width: 600px)");
-        if(x.matches){
-            //to do
-        }
-      //   myFunction(x); // Call listener function at run time
-      //   x.addListener(myFunction); // Attach listener function on state changes
-
         }) 
 }
     
@@ -162,7 +140,7 @@ if(document.URL.includes("movement")){
         }, 500);   
     }
 
-    // consider removing this feature because it conflits with the horinzontal scrolling
+    // when pinching on the touchpad, zoom out animation to go back to the homepage
     node = document.querySelector("body");
     node.addEventListener('wheel', (event) => {
         if(event.deltaY>0){
@@ -178,14 +156,10 @@ if(document.URL.includes("movement")){
         $(':root').css('--theme-color', movements[ID]["theme_color"]);
         $(':root').css('--main-bg-color', movements[ID]["main_bg_color"]);
 
-
+        // add alt text for each painting img
         $('.painting-box').each(function(i, obj) {
-            // console.log(obj.id);
             ID = obj.id
-            // console.log(paintings[ID]['alt']);
-            // obj.attr
             console.log($("#"+ID+" img"));
-
             $("#"+ID+" img").attr('alt', paintings[ID]['alt']);
         });
 
@@ -209,8 +183,7 @@ if(document.URL.includes("movement")){
                 setInterval(() => {
                     window.location.href = anchor.href;
                 },500);
-            });
-            
+            });          
         }   
     }
         
@@ -233,7 +206,6 @@ if(document.URL.includes("painting")){
         let movement = findMovement(paintingID);
         let backURL = "movement-"+movement+".html";
         movement = movements[movement];
-
    
         $(':root').css('--theme-color', movement["theme_color"]);
         $(':root').css('--main-bg-color', movement["main_bg_color"]);
