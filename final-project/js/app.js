@@ -63,14 +63,13 @@ if (document.URL.includes("index")||(!(document.URL.includes("movement"))&&!(doc
             'animate__animated',
             'animate__zoomIn'
         ];
-        window.onload = () => {
-            $(".timedot")
-                .addClass(fade_in);
 
-            $(".timeline-bar")
-                .removeClass("scaled")
-                .addClass("scaled-off");   
-        }
+        $(".timedot")
+            .addClass(fade_in);
+
+        $(".timeline-bar")
+            .removeClass("scaled")
+            .addClass("scaled-off");   
 
 
         // page transition animation, reference: https://stackoverflow.com/questions/24681127/play-animation-then-load-next-page
